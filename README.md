@@ -15,5 +15,6 @@ I wrote a computer vision script that:
 * calculates strain between all detected dots
 * outputs top three sets of markers with highest strain
 * produces heat map of neck that draws all locations of <10% strain
+* plots strain profiles of each laryngeal movement (swallow, cough, vocalization) over time
 
 We wrote two versions of our code: one to be run locally and another to be run automatically on the Texas Advanced Computing Center (TACC). Both versions will be included in this repository.
