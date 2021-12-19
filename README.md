@@ -21,27 +21,27 @@ We wrote two versions of our code: one to be run locally and another to be run a
 
 #### Code Guide:
 ##### Processing videos locally
-multi2.py
+###### multi2.py
   - selecting desired markers and processing videos altogether
-dump.py
+###### dump.py
   - selecting desired markers and exporting their coordinates as Pickle files
-dumpResizer.py
+###### dumpResizer.py
   - same as dump.py, but resizes resolution from 4K to 1080p
-load.py
+###### load.py
   - upload video and marker coordinates, runs tracker algorithm, and produces heat map and top strain output
-load2.py
+###### load2.py
   - same as load.py, but will process several videos with for loop
 
 ##### Processing videos on TACC
-strain.sh
+###### strain.sh
   - bash file for running load2.py
-strain.slurm
+###### strain.slurm
   - slurm file for running strain.sh
-strain.job
+###### strain.job
   - job file for running strain.slurm
 
 ##### Processing videos locally
-distance_matrix.py
+###### distance_matrix.py
   - uploads marker coordinates for one swallow, one cough, and one vocalization video, processes videos, and saves marker distances matrices as .csv file
-strain_plot.py
+###### strain_plot.py
   - uploads distances matrices, calculates strains, and plots strain vs time
