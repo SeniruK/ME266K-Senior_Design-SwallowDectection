@@ -18,3 +18,30 @@ I wrote a computer vision script that:
 * plots strain profiles of each laryngeal movement (swallow, cough, vocalization) over time
 
 We wrote two versions of our code: one to be run locally and another to be run automatically on the Texas Advanced Computing Center (TACC). Both versions will be included in this repository.
+
+#### Code Guide:
+##### Processing videos locally
+multi2.py
+  - selecting desired markers and processing videos altogether
+dump.py
+  - selecting desired markers and exporting their coordinates as Pickle files
+dumpResizer.py
+  - same as dump.py, but resizes resolution from 4K to 1080p
+load.py
+  - upload video and marker coordinates, runs tracker algorithm, and produces heat map and top strain output
+load2.py
+  - same as load.py, but will process several videos with for loop
+
+##### Processing videos on TACC
+strain.sh
+  - bash file for running load2.py
+strain.slurm
+  - slurm file for running strain.sh
+strain.job
+  - job file for running strain.slurm
+
+##### Processing videos locally
+distance_matrix.py
+  - uploads marker coordinates for one swallow, one cough, and one vocalization video, processes videos, and saves marker distances matrices as .csv file
+strain_plot.py
+  - uploads distances matrices, calculates strains, and plots strain vs time
